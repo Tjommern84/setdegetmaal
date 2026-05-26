@@ -1,4 +1,4 @@
-import { supabase } from './supabaseClient';
+import { getSupabase } from './supabaseClient';
 
 export type Service = {
   id: string;
@@ -22,7 +22,7 @@ export type SearchOptions = {
 };
 
 export async function searchServices(opts: SearchOptions): Promise<Service[]> {
-  const { data, error } = await supabase.rpc('search_services', {
+  const { data, error } = await getSupabase().rpc('search_services', {
     p_main_category: opts.mainCategory,
     p_tags: opts.tags ?? null,
     p_city: opts.city.toLowerCase(),
