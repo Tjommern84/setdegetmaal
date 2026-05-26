@@ -22,7 +22,9 @@ export type SearchOptions = {
 };
 
 export async function searchServices(opts: SearchOptions): Promise<Service[]> {
-  const { data, error } = await getSupabase().rpc('search_services', {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const client = getSupabase() as any;
+  const { data, error } = await client.rpc('search_services', {
     p_main_category: opts.mainCategory,
     p_tags: opts.tags ?? null,
     p_city: opts.city.toLowerCase(),
