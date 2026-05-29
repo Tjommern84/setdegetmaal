@@ -55,6 +55,7 @@ export const STEPS: QuizStep[] = [
       { value: 'inne',      label: 'Innendørs studio eller senter', emoji: '🏢' },
       { value: 'fleksibel', label: 'Fleksibel timeplan', emoji: '📅' },
       { value: 'fast',      label: 'Faste treningsdager å forholde meg til', emoji: '🔒' },
+      { value: 'tuftepark', label: 'Gratis utendørs treningsplass', emoji: '🌳' },
     ],
   },
 ];

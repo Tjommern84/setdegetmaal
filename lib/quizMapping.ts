@@ -40,6 +40,17 @@ export function mapQuizToRecommendations(answers: QuizAnswers): Recommendation[]
     });
   }
 
+  // Tuftepark / gratis utendørs
+  if (style.includes('tuftepark')) {
+    recs.push({
+      category: 'aktivitet-sport',
+      categoryLabel: 'Aktivitet & sport',
+      headline: 'Gratis tuftepark',
+      description: 'Utendørs treningsplasser med fast utstyr — åpent for alle, hele døgnet, gratis.',
+      searchParams: { mainCategory: 'aktivitet-sport', tags: ['tuftepark'] },
+    });
+  }
+
   // Natur / friluft
   if (goals.includes('natur') || style.includes('ute')) {
     recs.push({
